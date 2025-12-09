@@ -1,0 +1,241 @@
+\documentclass[a4paper]{article}
+
+\usepackage[pages=all, color=black, position={current page.south}, placement=bottom, scale=1, opacity=1, vshift=5mm]{background}
+\SetBgContents{
+	\tt This work is shared under a \href{https://creativecommons.org/licenses/by-sa/4.0/}{CC BY-SA 4.0 license} unless otherwise noted
+}      % copyright
+
+\usepackage[margin=1in]{geometry} % full-width
+
+% AMS Packages
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+% Unicode
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\hypersetup{
+	unicode,
+%	colorlinks,
+%	breaklinks,
+%	urlcolor=cyan, 
+%	linkcolor=blue, 
+	pdfauthor={Author One, Author Two, Author Three},
+	pdftitle={A simple article template},
+	pdfsubject={A simple article template},
+	pdfkeywords={article, template, simple},
+	pdfproducer={LaTeX},
+	pdfcreator={pdflatex}
+}
+
+% Vietnamese
+%\usepackage{vntex}
+
+% Natbib
+\usepackage[sort&compress,numbers,square]{natbib}
+\bibliographystyle{mplainnat}
+
+% Theorem, Lemma, etc
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{claim}{Claim}[theorem]
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{hypothesis}[theorem]{Hypothesis}
+\newtheorem{assumption}[theorem]{Assumption}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{criterion}[theorem]{Criterion}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{principle}[theorem]{Principle}
+
+\usepackage{graphicx, color}
+\graphicspath{{fig/}}
+
+%\usepackage[linesnumbered,ruled,vlined,commentsnumbered]{algorithm2e} % use algorithm2e for typesetting algorithms
+%% \usepackage{algorithm, algpseudocode} % use algorithm and algorithmicx for typesetting algorithms
+%% \usepackage{mathrsfs} % for \mathscr command  -- Functionality similar to this package 
+%% has recently(everypage) been implemented in LaTeX. This package is now in(everypage) legacy status.
+
+\usepackage{lipsum}
+
+% Author info
+\title{A simple article template}
+\author{Author One$^1$\thanks{Author One was partially supported by Grant XXX} \and Author Two$^2$ \and Author Three$^1$}
+
+\date{
+	$^1$Organization 1 \\ \texttt{\{auth1, auth3\}@org1.edu}\\%
+	$^2$Organization 2 \\ \texttt{auth3@inst2.edu}\\[2ex]%
+%	\today
+}
+
+\begin{document}
+	\maketitle
+	
+	\begin{abstract}
+		\lipsum[1]
+		
+		\noindent\textbf{Keywords:} article, template, simple
+	\end{abstract}
+
+	\tableofcontents
+	
+	\section{Introduction}
+	\label{sec:intro}
+	
+	\lipsum[2]
+	
+	\subsection{Preliminaries}
+	\label{sec:pre}
+	
+	\lipsum[3]
+	
+	\subsection{Previous Results}
+	\label{sec:prev-results}
+	
+	Null graphs are discussed in \cite{HararyR74}
+	The concept of ``internally stable set'' was used in \cite{Berge57, Berge58}.
+	
+	\begin{theorem}
+		\label{thrm:1}
+		\lipsum[4]
+	\end{theorem}
+	\begin{proof}
+		content...
+	\end{proof}
+
+	\begin{corollary}
+	\label{cor:1}
+	
+	\lipsum[5]
+	\end{corollary}
+
+	Unordered List (taken from Overleaf)
+	\begin{itemize}
+		\item The individual entries are indicated with a black dot, a so-called bullet.
+		\item The text in the entries may be of any length.
+	\end{itemize}
+
+	Ordered List (taken from Overleaf)
+	\begin{enumerate}
+		\item The labels consists of sequential numbers.
+		\item The numbers starts at 1 with every call to the enumerate environment.
+	\end{enumerate}
+
+	\begin{table}[ht]
+		\centering
+		\begin{tabular}{|c|c|}
+			\hline
+			\textbf{Odd} & \textbf{Even} \\
+			\hline\hline
+			One & Two \\
+			\hline
+			Three & Four \\
+			\hline
+		\end{tabular}
+		\caption{This is a table}
+		\label{tbl:1}
+	\end{table}
+
+	Table~\ref*{tbl:1} is an example of a table.
+title: "Partridges in Pear Trees -- Rmarkdown"
+author: "John Nash and Prashanth Velayudhan"
+date: "2025-12-08"
+
+## Motivation
+
+The preparation of scientific documents with mathematical content has always given
+their authors and printers difficulty in rendering the material to paper or screen.
+This article is part of an exercise to illustrate how different systems for preparing
+such documents compare in capability and ease of use.
+
+The text preparation systems to be compared are LaTeX (??ref), Typst (??ref) and
+Rmarkdown (??ref). We note that bibliographic support is also of interest to users.
+
+## A useful example
+
+The Christmas counting song "The Twelve Days of Christmas" suggest the singer 
+receives one gift -- we shall unabashedly simply declare that the Partridge in 
+a Pear Tree is a single gift -- on the first of twelve days, then that gift plus
+two more on the second, and so forth. For our needs, we want to have a general
+formula for the total number of gifts received after $n$ days. While the commonly
+known song uses 12 days, there are variants with other values of $n$. The Faroe
+Islands use the inflationary value $n = 15$. In our exposition, we will rely on
+the Wikipedia reference ??ref as our authority.
+
+Thus we seek a formula for $T(n)$, the total number of presents received after
+the $n$'th day.
+
+## Single day number of presents
+
+On a single day, the number of presents $S(n)$ is clearly the sum of an arithmetic
+progression (??ref)
+
+?? How to label equations on the same line??
+
+$$ S(k) = \sum _{i = 1} ^k {i} $$
+Clearly we now want to compute
+
+$$ T(n) = \sum _{j = 1} ^n S(k) $$
+The formula for $S(k)$ is well known, and derived by noting that writing the sequence forwards and then backwards illustrates that twice the sum is $k * (k+1)$, so we have
+
+$$  S(k) = k (k + 1) / 2  $$
+We can use this so that we find
+
+$$  2 T(n) =  \sum _{k=1} ^n  {( k^2 + k )}  $$
+
+We therefore need 
+
+$$ Q(n) = \sum _{k = 1} ^n {k^2}$$
+
+To give our provisional expression as
+
+$$  T(n) = ( Q(n) + S(n) ) / 2 $$
+
+$Q(n)$ is a well-known summation, often proved by mathematical induction,
+
+$$  Q(n) = n (2 n + 1) (n + 1) / 6 $$
+Thus we want (?? how to do multiline equation?)
+
+$$       T(n) = ( n (2 n + 1 )(n+1) / 6 + n(n+1)/ 2) / 2 
+            = ( 2 n^3 + 3 n^2 + n  + 3 n^2 + 3 n) / 12
+            = ( 2 n^3 + 6 n^2 + 4 n)/12
+            = ( n^3 + 3 n^2 + 2 n)/6  $$
+```{r compute}
+n <- 12
+(n^3 + 3* n^2 + 2*n)/6
+```
+
+	
+	\section{More Examples}
+	\label{sec:examples}
+	
+	Now we include a figure.
+	(See Figure~\ref{fig:example}.)
+	\begin{figure}[ht]
+		\centering
+		\includegraphics[width=0.3\textwidth]{example}
+		\caption{An example of a figure}
+		\label{fig:example}
+	\end{figure}
+	
+	\paragraph{Acknowledgements} \lipsum[6]
+	
+%	\newpage
+	\bibliography{refs}
+	
+	\appendix
+	
+	\section{Omitted Proof in Section~\ref{sec:examples}}
+	\label{app:1}
+	
+	\lipsum[7]
+	
+\end{document}
