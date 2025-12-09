@@ -40,17 +40,19 @@ the $n$'th day.
 ## Single day number of presents
 
 On a single day, the number of presents $S(n)$ is clearly the sum of an arithmetic
-progression (??ref)
+progression \@ref(eq:arithmetic).
 
-?? How to label equations on the same line??
+\begin{equation}
+S(k) = \sum_{i=1}^k i
+\label{eq:arithmetic}
+\end{equation}
 
-$$ S(k) = \sum _{i = 1} ^k {i} $$
 Clearly we now want to compute
 
 $$ T(n) = \sum _{j = 1} ^n S(k) $$
 The formula for $S(k)$ is well known, and derived by noting that writing the sequence forwards and then backwards illustrates that twice the sum is $k * (k+1)$, so we have
 
-$$  S(k) = k (k + 1) / 2  $$
+$$  S(k) = \frac{k (k + 1)}{2}  $$
 We can use this so that we find
 
 $$  2 T(n) =  \sum _{k=1} ^n  {( k^2 + k )}  $$
@@ -61,19 +63,26 @@ $$ Q(n) = \sum _{k = 1} ^n {k^2}$$
 
 To give our provisional expression as
 
-$$  T(n) = ( Q(n) + S(n) ) / 2 $$
+$$  T(n) = \frac{Q(n) + S(n)}{2} $$
 
 $Q(n)$ is a well-known summation, often proved by mathematical induction,
 
-$$  Q(n) = n (2 n + 1) (n + 1) / 6 $$
-Thus we want (?? how to do multiline equation?)
+$$  Q(n) = \frac{n (2 n + 1) (n + 1)}{6} $$
 
-$$       T(n) = ( n (2 n + 1 )(n+1) / 6 + n(n+1)/ 2) / 2 
-            = ( 2 n^3 + 3 n^2 + n  + 3 n^2 + 3 n) / 12
-            = ( 2 n^3 + 6 n^2 + 4 n)/12
-            = ( n^3 + 3 n^2 + 2 n)/6  $$
+Thus we want:
+
+\begin{align*}
+        T(n) &= \frac{1}{2} \left(\frac{n (2 n + 1 )(n+1)}{6} + \frac{n(n+1)}{2}\right)\\
+             &= \frac{2 n^3 + 3 n^2 + n  + 3 n^2 + 3 n}{12} \\
+             &= \frac{2 n^3 + 6 n^2 + 4 n}{12} \\
+             &= \frac{n^3 + 3 n^2 + 2 n}{6}
+\end{align*}
+
 ```{r compute}
 n <- 12
 (n^3 + 3* n^2 + 2*n)/6
 ```
 
+\newpage
+
+## References
