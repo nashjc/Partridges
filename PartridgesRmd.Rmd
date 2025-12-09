@@ -16,6 +16,8 @@ their authors and printers difficulty in rendering the material to paper or scre
 This article is part of an exercise to illustrate how different systems for preparing
 such documents compare in capability and ease of use.
 
+<!-- would like to use LaTeX symbol -->
+
 The text preparation systems to be compared are LaTeX (??ref), Typst (??ref) and
 Rmarkdown (??ref). We note that bibliographic support is also of interest to users.
 
