@@ -2,8 +2,11 @@
 title: "Partridges in Pear Trees -- Rmarkdown"
 author: "John Nash and Prashanth Velayudhan"
 date: "2025-12-08"
-output: pdf_document
+output:
+    bookdown::pdf_document2:
+        number_sections: false
 bibliography: references.bib
+toc: false
 ---
 
 ```{r setup, include=FALSE}
