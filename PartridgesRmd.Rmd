@@ -32,7 +32,7 @@ two more on the second, and so forth. For our needs, we want to have a general
 formula for the total number of gifts received after $n$ days. While the commonly
 known song uses 12 days, there are variants with other values of $n$. The Faroe
 Islands use the inflationary value $n = 15$. In our exposition, we will rely on
-the Wikipedia reference ??ref as our authority.
+the Wikipedia reference @noauthor_twelve_2025 as our authority.
 
 Thus we seek a formula for $T(n)$, the total number of presents received after
 the $n$'th day.
