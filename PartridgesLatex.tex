@@ -149,7 +149,7 @@ title: "Partridges in Pear Trees -- Rmarkdown"
 author: "John Nash and Prashanth Velayudhan"
 date: "2025-12-08"
 
-## Motivation
+\section*{Motivation}
 
 The preparation of scientific documents with mathematical content has always given
 their authors and printers difficulty in rendering the material to paper or screen.
@@ -159,7 +159,7 @@ such documents compare in capability and ease of use.
 The text preparation systems to be compared are LaTeX (??ref), Typst (??ref) and
 Rmarkdown (??ref). We note that bibliographic support is also of interest to users.
 
-## A useful example
+\section{A useful example}
 
 The Christmas counting song "The Twelve Days of Christmas" suggest the singer 
 receives one gift -- we shall unabashedly simply declare that the Partridge in 
@@ -173,7 +173,7 @@ the Wikipedia reference ??ref as our authority.
 Thus we seek a formula for $T(n)$, the total number of presents received after
 the $n$'th day.
 
-## Single day number of presents
+\section*{Single day number of presents}
 
 On a single day, the number of presents $S(n)$ is clearly the sum of an arithmetic
 progression (??ref)
@@ -207,35 +207,9 @@ Thus we want (?? how to do multiline equation?)
 $$       T(n) = ( n (2 n + 1 )(n+1) / 6 + n(n+1)/ 2) / 2 
             = ( 2 n^3 + 3 n^2 + n  + 3 n^2 + 3 n) / 12
             = ( 2 n^3 + 6 n^2 + 4 n)/12
-            = ( n^3 + 3 n^2 + 2 n)/6  $$
-```{r compute}
-n <- 12
-(n^3 + 3* n^2 + 2*n)/6
-```
+            = ( n^3 + 3 n^2 + 2 n)/6  
+$$
 
-	
-	\section{More Examples}
-	\label{sec:examples}
-	
-	Now we include a figure.
-	(See Figure~\ref{fig:example}.)
-	\begin{figure}[ht]
-		\centering
-		\includegraphics[width=0.3\textwidth]{example}
-		\caption{An example of a figure}
-		\label{fig:example}
-	\end{figure}
-	
-	\paragraph{Acknowledgements} \lipsum[6]
-	
-%	\newpage
-	\bibliography{refs}
-	
-	\appendix
-	
-	\section{Omitted Proof in Section~\ref{sec:examples}}
-	\label{app:1}
-	
-	\lipsum[7]
+\bibliography{references.bib}
 	
 \end{document}
