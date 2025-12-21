@@ -95,4 +95,4 @@ n <- 12
 #let n = 12
 #((calc.pow(n, 3) + 3*n*n + 2*n)/6)
 
-#bibliography("references.bib", title: "References")
+#bibliography("PartridgeRefs.bib", title: "References")
