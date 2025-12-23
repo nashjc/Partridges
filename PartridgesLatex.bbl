@@ -1,0 +1,22 @@
+\begin{thebibliography}{1}
+
+\bibitem{lamport_latex_1986}
+L.~Lamport.
+\newblock {\em {LATEX}: {A} {Document} {Preparation} {System}}.
+\newblock Addison-Wesley Publishing Company, 1986.
+
+\bibitem{madje2022programmable}
+Laurenz M{\"a}dje.
+\newblock {\em A Programmable Markup Language for Typesetting}.
+\newblock PhD thesis, 2022, 2022.
+
+\bibitem{rmarkdown}
+Yihui Xie, J.J. Allaire, and Garrett Grolemund.
+\newblock {\em R Markdown: The Definitive Guide}.
+\newblock Chapman and Hall/CRC, Boca Raton, Florida, 2018.
+
+\bibitem{noauthor_twelve_2025}
+The {Twelve} {Days} of {Christmas} (song), December 2025.
+\newblock Page Version ID: 1326578965.
+
+\end{thebibliography}

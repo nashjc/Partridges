@@ -72,7 +72,7 @@
 
 \date{
 	$^1$Telfer School, University of Ottawa \\ \texttt{profjcnash@gmail.com}\\%
-	$^2$?? \\ \texttt{psvelayu@gmail.com}\\[2ex]%
+	$^2$Department of Physiology, University of Toronto \\ \texttt{psvelayu@gmail.com}\\[2ex]%
 %	\today
 }
 
@@ -88,8 +88,7 @@ their authors and printers difficulty in rendering the material to paper or scre
 This article is part of an exercise to illustrate how different systems for preparing
 such documents compare in capability and ease of use.
 
-The text preparation systems to be compared are LaTeX (??ref), Typst (??ref) and
-Rmarkdown (??ref). We note that bibliographic support is also of interest to users.
+The text preparation systems to be compared are LaTeX (\cite{lamport_latex_1986}), Typst (\cite{madje2022programmable}) and Rmarkdown (\cite{rmarkdown}). We note that bibliographic support is also of interest to users.
 
 \section{A useful example}
 
@@ -100,7 +99,7 @@ two more on the second, and so forth. For our needs, we want to have a general
 formula for the total number of gifts received after $n$ days. While the commonly
 known song uses 12 days, there are variants with other values of $n$. The Faroe
 Islands use the inflationary value $n = 15$. In our exposition, we will rely on
-the Wikipedia reference ??ref as our authority.
+the Wikipedia reference \cite{noauthor_twelve_2025} as our authority.
 
 Thus we seek a formula for $T(n)$, the total number of presents received after
 the $n$'th day.
@@ -108,17 +107,20 @@ the $n$'th day.
 \section*{Single day number of presents}
 
 On a single day, the number of presents $S(n)$ is clearly the sum of an arithmetic
-progression (??ref)
+progression (Equation~\ref{eq:arithmetic}).
 
-?? How to label equations on the same line??
+\begin{equation}
+S(k) = \sum _{i = 1} ^k {i} \label{eq:arithmetic}
+\end{equation}
 
-$$ S(k) = \sum _{i = 1} ^k {i} $$
 Clearly we now want to compute
 
 $$ T(n) = \sum _{j = 1} ^n S(k) $$
+
 The formula for $S(k)$ is well known, and derived by noting that writing the sequence forwards and then backwards illustrates that twice the sum is $k * (k+1)$, so we have
 
-$$  S(k) = k (k + 1) / 2  $$
+$$  S(k) = \frac{k (k + 1)}{2}  $$
+
 We can use this so that we find
 
 $$  2 T(n) =  \sum _{k=1} ^n  {( k^2 + k )}  $$
@@ -129,19 +131,23 @@ $$ Q(n) = \sum _{k = 1} ^n {k^2}$$
 
 To give our provisional expression as
 
-$$  T(n) = ( Q(n) + S(n) ) / 2 $$
+$$  T(n) = \frac{Q(n) + S(n)}{2} $$
 
 $Q(n)$ is a well-known summation, often proved by mathematical induction,
 
-$$  Q(n) = n (2 n + 1) (n + 1) / 6 $$
-Thus we want (?? how to do multiline equation?)
+$$  Q(n) = \frac{n (2 n + 1) (n + 1)}{6} $$
 
-$$       T(n) = ( n (2 n + 1 )(n+1) / 6 + n(n+1)/ 2) / 2 
-            = ( 2 n^3 + 3 n^2 + n  + 3 n^2 + 3 n) / 12
-            = ( 2 n^3 + 6 n^2 + 4 n)/12
-            = ( n^3 + 3 n^2 + 2 n)/6  
-$$
+Thus we want:
 
+\begin{align*}
+        T(n) &= \frac{1}{2} \left(\frac{n (2 n + 1 )(n+1)}{6} + \frac{n(n+1)}{2}\right)\\
+             &= \frac{2 n^3 + 3 n^2 + n  + 3 n^2 + 3 n}{12} \\
+             &= \frac{2 n^3 + 6 n^2 + 4 n}{12} \\
+             &= \frac{n^3 + 3 n^2 + 2 n}{6}
+\end{align*}
+
+
+\bibliographystyle{unsrt}
 \bibliography{PartridgeRefs.bib}
 	
 \end{document}
