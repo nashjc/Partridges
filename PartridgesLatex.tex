@@ -70,11 +70,15 @@
 \title{Partridges in Pear Trees -- LaTeX}
 \author{John Nash$^1$ \and Prashanth Velayudhan$^2$}
 
+%% Why "date" function?
+
 \date{
 	$^1$Telfer School, University of Ottawa \\ \texttt{profjcnash@gmail.com}\\%
 	$^2$Department of Physiology, University of Toronto \\ \texttt{psvelayu@gmail.com}\\[2ex]%
 %	\today
 }
+
+
 
 \begin{document}
 	\maketitle
@@ -107,36 +111,30 @@ the $n$'th day.
 \section*{Single day number of presents}
 
 On a single day, the number of presents $S(n)$ is clearly the sum of an arithmetic
-progression (Equation~\ref{eq:arithmetic}).
+progression (Equation~\ref{eq:aprog}).
 
-\begin{equation}
-S(k) = \sum _{i = 1} ^k {i} \label{eq:arithmetic}
-\end{equation}
-
+\[
+\label{eq:aprog} \tag{Arith-progrn}
+ S(k) = \sum _{i = 1} ^k {i} 
+\]
 Clearly we now want to compute
 
 $$ T(n) = \sum _{j = 1} ^n S(k) $$
-
 The formula for $S(k)$ is well known, and derived by noting that writing the sequence forwards and then backwards illustrates that twice the sum is $k * (k+1)$, so we have
 
 $$  S(k) = \frac{k (k + 1)}{2}  $$
-
 We can use this so that we find
 
 $$  2 T(n) =  \sum _{k=1} ^n  {( k^2 + k )}  $$
-
 We therefore need 
 
 $$ Q(n) = \sum _{k = 1} ^n {k^2}$$
-
 To give our provisional expression as
 
 $$  T(n) = \frac{Q(n) + S(n)}{2} $$
-
 $Q(n)$ is a well-known summation, often proved by mathematical induction,
 
 $$  Q(n) = \frac{n (2 n + 1) (n + 1)}{6} $$
-
 Thus we want:
 
 \begin{align*}
