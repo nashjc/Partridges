@@ -70,11 +70,15 @@
 \title{Partridges in Pear Trees -- LaTeX}
 \author{John Nash$^1$ \and Prashanth Velayudhan$^2$}
 
+%% Why "date" function?
+
 \date{
 	$^1$Telfer School, University of Ottawa \\ \texttt{profjcnash@gmail.com}\\%
 	$^2$?? \\ \texttt{psvelayu@gmail.com}\\[2ex]%
 %	\today
 }
+
+
 
 \begin{document}
 	\maketitle
@@ -111,8 +115,10 @@ On a single day, the number of presents $S(n)$ is clearly the sum of an arithmet
 progression (??ref)
 
 ?? How to label equations on the same line??
-
-$$ S(k) = \sum _{i = 1} ^k {i} $$
+\[
+\label{eq:aprog} \tag{Arith-progrn} 
+ S(k) = \sum _{i = 1} ^k {i} 
+\]
 Clearly we now want to compute
 
 $$ T(n) = \sum _{j = 1} ^n S(k) $$
