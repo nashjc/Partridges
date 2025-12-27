@@ -34,8 +34,7 @@ the $n$'th day.
 
 == Single day number of presents
 
-On a single day, the number of presents $S(n)$ is clearly the sum of an arithmetic
-progression @eq:arithmetic.
+On a single day, the number of presents $S(n)$ is clearly the sum of an arithmetic progression (@eq:arithmetic).
 
 // A single space surrounding the equation determines if it will be inline
 // with text or a full-sized equation on its own line.
@@ -73,42 +72,6 @@ One final time, but we are back to using standard numbering:
 #counter(math.equation).update(0)
 
 $ S(k) = sum_(i=1)^k i $
-
-
-= The Header
-<my-header>
-
-#let blue-underline(it) = underline({
-  set text(blue)
-  it
-})
-
-#show link: blue-underline
-
-#show ref: it => {
-  if it.element.numbering == none {
-    link(it.target, it.element.body)
-  } else {
-    it
-  }
-}
-
-
-= Another header
-
-
-Please see #link(<my-header>)[This heading] for more details.
-
-
-
-
-
-
-
-
-
-
-
 
 // Deleting this line will allow the remaining equations to be numbered
 #set math.equation(numbering: none)
