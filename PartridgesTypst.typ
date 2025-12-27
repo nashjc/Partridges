@@ -39,8 +39,76 @@ progression @eq:arithmetic.
 
 // A single space surrounding the equation determines if it will be inline
 // with text or a full-sized equation on its own line.
+
+#set math.equation(
+    numbering: (..) => "Arith-progrn",
+    number-align: left
+)
+
 // Note that the common keyword sum does not need escaping.
-$ S(k) = sum_{i=1}^k i $ <eq:arithmetic>
+$ S(k) = sum_(i=1)^k i $ <eq:arithmetic>
+
+Once more, but with numbering:
+
+#set math.equation(
+    numbering: (..) => "Arith-progrn " + counter(math.equation).display("1"),
+    number-align: left
+)
+
+$ S(k) = sum_(i=1)^k i $
+
+Once more, but with the global equation counter reset:
+
+#counter(math.equation).update(0)
+
+$ S(k) = sum_(i=1)^k i $
+
+One final time, but we are back to using standard numbering:
+
+#set math.equation(
+    numbering: "(1)",
+    number-align: right
+)
+
+#counter(math.equation).update(0)
+
+$ S(k) = sum_(i=1)^k i $
+
+
+= The Header
+<my-header>
+
+#let blue-underline(it) = underline({
+  set text(blue)
+  it
+})
+
+#show link: blue-underline
+
+#show ref: it => {
+  if it.element.numbering == none {
+    link(it.target, it.element.body)
+  } else {
+    it
+  }
+}
+
+
+= Another header
+
+
+Please see #link(<my-header>)[This heading] for more details.
+
+
+
+
+
+
+
+
+
+
+
 
 // Deleting this line will allow the remaining equations to be numbered
 #set math.equation(numbering: none)
@@ -96,3 +164,5 @@ n <- 12
 #((calc.pow(n, 3) + 3*n*n + 2*n)/6)
 
 #bibliography("PartridgeRefs.bib", title: "References")
+
+
