@@ -8,7 +8,7 @@
 \usepackage[margin=1in]{geometry} % full-width
 
 % AMS Packages
-\usepackage{amsmath}
+\usepackage[leqno]{amsmath}
 \usepackage{amsthm}
 \usepackage{amssymb}
 
@@ -143,6 +143,42 @@ Thus we want:
              &= \frac{2 n^3 + 6 n^2 + 4 n}{12} \\
              &= \frac{n^3 + 3 n^2 + 2 n}{6}
 \end{align*}
+Table~\ref{tab:total} shows the total number of gifts received as of each day.
+
+\begin{table}[!h]
+\centering
+\label{tab:total}
+\begin{tabular}{r|r}
+    \hline
+    \textbf{Day} & \textbf{Gifts}\\
+    \hline
+    1 & 1\\
+    \hline
+    2 & 4\\
+    \hline
+    3 & 10\\
+    \hline
+    4 & 20\\
+    \hline
+    5 & 35\\
+    \hline
+    6 & 56\\
+    \hline
+    7 & 84\\
+    \hline
+    8 & 120\\
+    \hline
+    9 & 165\\
+    \hline
+    10 & 220\\
+    \hline
+    11 & 286\\
+    \hline
+    12 & 364\\
+    \hline
+\end{tabular}
+\caption{Total gifts received as of each of the 12 days.}
+\end{table}
 
 
 \bibliographystyle{unsrt}

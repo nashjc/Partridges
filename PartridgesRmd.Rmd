@@ -40,9 +40,9 @@ the $n$'th day.
 ## Single day number of presents
 
 On a single day, the number of presents $S(n)$ is clearly the sum of an arithmetic progression \@ref(eq:arithmetic).
-
 \begin{equation}
 S(k) = \sum_{i=1}^k i
+\tag{Arith-progrn}
 \label{eq:arithmetic}
 \end{equation}
 
@@ -83,5 +83,24 @@ Thus we want:
 n <- 12
 (n^3 + 3* n^2 + 2*n)/6
 ```
+
+Table \ref{tab:total} shows the total number of gifts received as of each day.
+
+| **Day** | **Gifts** |
+| ---:  | -----:  |
+| 1     | 1       |
+| 2     | 4       |
+| 3     | 10      |
+| 4     | 20      |
+| 5     | 35      |
+| 6     | 56      |
+| 7     | 84      |
+| 8     | 120     |
+| 9     | 165     |
+| 10    | 220     |
+| 11    | 286     |
+| 12    | 364     |
+
+Table: (\#tab:total) Total gifts received as of each of the 12 days.
 
 ## References

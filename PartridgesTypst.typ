@@ -111,21 +111,66 @@ $ T(n) &= 1/2 ((n (2 n + 1 )(n+1))/6 + (n(n+1))/2) \
 $
 
 
-// We can easily display literal code, but actually running R is not as
-// straightforward as in rmarkdown / quarto.
-
-```r
-n <- 12
-(n^3 + 3* n^2 + 2*n)/6
-```
-
 // This is a very impractical way to do serious calculations,
 // but does demonstrate some of typst's capabilities as its
 // own programming language. I'm not entirely sure when this
 // would be helpful.
+We can calculate the summation from within typst using its built-in scripting capabilities:
+
+```typst
+#let n = 12
+#((calc.pow(n, 3) + 3*n*n + 2*n)/6)
+```
+
+to get the result:
+
 #let n = 12
 #((calc.pow(n, 3) + 3*n*n + 2*n)/6)
 
+@tab_total shows the total number of gifts received as of each day.
+
+#align(center)[
+    #figure(
+        table(
+            columns: 2,
+            [*Day*], [*Gifts*],
+            [1], [1],
+            [2], [4],
+            [3], [10],
+            [4], [20],
+            [5], [35],
+            [6], [56],
+            [7], [84],
+            [8], [120],
+            [9], [165],
+            [10], [220],
+            [11], [286],
+            [12], [364],
+        ),
+        caption: [Total gifts received as of each of the 12 days.]
+    ) <tab_total>
+]
+
+
+//// Markdown-style tables also work with a separate package:
+//#import "@preview/tablem:0.3.0": tablem, three-line-table
+//#align(center)[
+//    #tablem[
+//        | *day* | *gifts* |
+//        | ---:  | -----:  |
+//        | 1     | 1       |
+//        | 2     | 4       |
+//        | 3     | 10      |
+//        | 4     | 20      |
+//        | 5     | 35      |
+//        | 6     | 56      |
+//        | 7     | 84      |
+//        | 8     | 120     |
+//        | 9     | 165     |
+//        | 10    | 220     |
+//        | 11    | 286     |
+//        | 12    | 364     |
+//    ]
+//]
+
 #bibliography("PartridgeRefs.bib", title: "References")
-
-
