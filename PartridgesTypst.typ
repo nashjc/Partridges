@@ -2,7 +2,7 @@
 // Also note the flexibility of changing "(1)" to "1" or "1." or "a)"
 #set math.equation(numbering: "(1)")
 
-= Partridges in Pear Trees -- Rmarkdown
+= Partridges in Pear Trees -- Typst
 
 John Nash and Prashanth Velayudhan
 
