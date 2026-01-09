@@ -1,3 +1,5 @@
+:stem: latexmath
+
 [.text-center]
 
 = Partridges in Pear Trees -- Asciidoc
@@ -8,7 +10,6 @@
 
 [.normal]
 
-:stem: latexmath
 
 
 [.text-left]
@@ -20,7 +21,12 @@ given their authors and printers difficulty in rendering the material to paper
 or screen. This article is part of an exercise to illustrate how different
 systems for preparing such documents compare in capability and ease of use.
 
-The text preparation systems to be compared are \LaTeX (@lamport_latex_1986), 
+The text preparation systems to be compared are latexmath:[\LaTeX]
+(@lamport_latex_1986), 
+
+// need bibliography stuff sorted out. asciidoctor-bibtex is installed on M21 machine, 
+//  but the code changes are non-trivial.
+
 Typst (@madje2022programmable) and R Markdown (@rmarkdown).
 We note that bibliographic support is also of interest to users.
 
@@ -35,7 +41,7 @@ a Pear Tree is a single gift -- on the first of twelve days, then that gift plus
 two more on the second, and so forth. For our needs, we want to have a general
 formula for the total number of gifts received after latexmath:[n] days. While the commonly
 known song uses 12 days, there are variants with other values of $n$. The Faroe
-Islands use the inflationary value $n = 15$. In our exposition, we will rely on
+Islands use the inflationary value latexmath:[n = 15]. In our exposition, we will rely on
 the Wikipedia reference @noauthor_twelve_2025 as our authority.
 
 Thus we seek a formula for latexmath:[T(n)], the total number of presents received after
@@ -46,71 +52,73 @@ the $n$'th day.
 ## Single day number of presents
 
 
-On a single day, the number of presents $S(n)$ is clearly the sum of an arithmetic
+On a single day, the number of presents latexmath:[S(n)] is clearly the sum of an arithmetic
 progression (@eq-arithmetic).
 
-[latexmath]
-++++
-S(k) = \sum_{i=1}^k i
-\tag{Arith-progrn}
-++++
+latexmath:[ S(k) = \sum_{i=1}^k i ]
 
+//  \tag{Arith-progrn}
 
-<!--Note that the equation label must start with "eq-", stricter than some other formats-->
 
 Clearly we now want to compute
 
-$$ T(n) = \sum _{k = 1} ^n S(k) $$
-The formula for $S(k)$ is well known, and derived by noting that writing the sequence forwards and then backwards illustrates that twice the sum is $k * (k+1)$, so we have
+latexmath:[ T(n) = \sum _{k = 1} ^n S(k) ]
 
-$$  S(k) = \frac{k (k + 1)}{2}  $$
+The formula for latexmath:[S(k)] is well known, and derived by noting that writing the sequence forwards and then backwards illustrates that twice the sum is latexmath:[k * (k+1)], so we have
+
+latexmath:[  S(k) = \frac{k (k + 1)} {2}]
 We can use this so that we find
 
-$$  2 T(n) =  \sum _{k=1} ^n  {( k^2 + k )}  $$
+latexmath:[  2 T(n) =  \sum _{k=1} ^n  {( k^2 + k )}  ]
 
 We therefore need 
 
-$$ Q(n) = \sum _{k = 1} ^n {k^2}$$
+latexmath:[ Q(n) = \sum _{k = 1} ^n {k^2} ]
 
 To give our provisional expression as
 
-$$  T(n) = \frac{Q(n) + S(n)}{2} $$
+latexmath:[  T(n) = \frac{Q(n) + S(n)}{2} ]
 
-$Q(n)$ is a well-known summation, often proved by mathematical induction,
+latexmath:[Q(n)] is a well-known summation, often proved by mathematical induction,
 
-$$  Q(n) = \frac{n (2 n + 1) (n + 1)}{6} $$
+latexmath:[  Q(n) = \frac{n (2 n + 1) (n + 1)}{6} ]
 
 Thus we want:
 
-\begin{align*}
+//this fails -- tried a number of ways
+
+[latexmath]
+++++
         T(n) &= \frac{1}{2} \left(\frac{n (2 n + 1 )(n+1)}{6} + \frac{n(n+1)}{2}\right)\\
              &= \frac{2 n^3 + 3 n^2 + n  + 3 n^2 + 3 n}{12} \\
              &= \frac{2 n^3 + 6 n^2 + 4 n}{12} \\
              &= \frac{n^3 + 3 n^2 + 2 n}{6}
-\end{align*}
+++++
 
-```{r compute}
-n <- 12
-(n^3 + 3* n^2 + 2*n)/6
-```
+//```{r compute}
+//n <- 12
+//(n^3 + 3* n^2 + 2*n)/6
+//```
 
 @tbl-total shows the total number of gifts received as of each day.
 
-| **Day** | **Gifts** |
-| ---:  | -----:  |
-| 1     | 1       |
-| 2     | 4       |
-| 3     | 10      |
-| 4     | 20      |
-| 5     | 35      |
-| 6     | 56      |
-| 7     | 84      |
-| 8     | 120     |
-| 9     | 165     |
-| 10    | 220     |
-| 11    | 286     |
-| 12    | 364     |
-
+[cols="1,1"]
+|===
+| **Day** | **Gifts** 
+| ---  | -----
+| 1    | 1       
+| 2    | 4       
+| 3    | 10      
+| 4    | 20      
+| 5    | 35      
+| 6    | 56      
+| 7    | 84      
+| 8    | 120     
+| 9    | 165     
+| 10   | 220     
+| 11   | 286     
+| 12   | 364     
+|===
 : Total gifts received as of each of the 12 days. {#tbl-total}
 
 [.text-left]
