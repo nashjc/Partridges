@@ -78,7 +78,7 @@ $ S(k) = sum_(i=1)^k i $
 
 Clearly we now want to compute
 
-$ T(n) = sum_{j = 1} ^n S(k) $
+$ T(n) = sum_(k = 1) ^n S(k) $
 
 The formula for $S(k)$ is well known, and derived by noting that writing the sequence forwards and then backwards illustrates that twice the sum is $k * (k+1)$, so we have
 
