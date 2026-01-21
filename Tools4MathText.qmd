@@ -45,7 +45,8 @@ formula for the total number of gifts received after $n$ days. While the commonl
 known song uses 12 days, there are variants with other values of $n$. The Faroe
 Islands use the inflationary value $n = 15$. In our exposition, we will rely on
 the Wikipedia reference @noauthor_twelve_2025 as our authority. We will name our
-example ***Partridges*** for simplicity.
+example ***Partridges*** for simplicity. This document serves as a ***Quarto*** version of this
+example.
 
 Thus we seek a formula for $T(n)$, the total number of presents received after
 the $n$'th day. This document is being prepared in Quarto and will serve as the
@@ -132,16 +133,18 @@ effort to get to a finished product. Thus the complexity of the text material
 they must enter is important.
 
 \LaTeX, itself an attempt to streamline the use of Donald Knuth's \TeX 
-(@knuth1984) is now forty years old. It appeared at the juncture of traditional
-professional manual metal or photographic typesetting and computer-based 
-typographic systems for end-users. As such, it has a lot of detail that the
+(@knuth1984), is now forty years old. It appeared at the juncture where traditional
+typesetting by professional workers using manual metal or photographic processes
+were giving way to computer-based typographic systems that end-users could employ
+themselves. As such, \TeX  and subsequently \LaTeX have a lot of detail that the
 user must supply, even as Knuth had made huge strides in automating the 
 typesetting of mathematical and similar material. Knuth, starting in 1977,
 needed to support \TeX with appropriate computer-defined fonts, as detailed
-in @knuth1986meta .
+in @knuth1986meta.
 
-\LaTeX accomplishes a lot of the tasks of formatting parts of documents, for
-instance, special headers or footers, or equation labelling, by use of add-in
+\LaTeX accomplishes a lot of the tasks of formatting parts of documents, in particular
+the mathematical or other scientific material. Moreover, for tasks such as 
+special headers or footers, or equation labelling, there are add-in
 packages. Such packages are declared in a preamble to the actual document 
 material. Indeed, the structure of a \LaTeX  file is of the form
 
@@ -183,9 +186,8 @@ For the collections ***Different Perspectives***
 (https://www.obooko.com/free-short-story-collections/different-perspectives)
 and ***The Coffee Klatch Curmudgeon***
 (https://www.obooko.com/free-short-story-collections/coffee-klatch-curmudgeon-nash),
-the use of the \LaTeX directive `\input{}` to incorporate a weekly text.
-
-The weekly contributions are almost entirely content text, prefaced by a line
+the \LaTeX directive `\input{}` is used to incorporate a weekly text. 
+The weekly contributions are almost entirely plain-text content, prefaced by a line
 with the title
 
 ```
@@ -206,24 +208,24 @@ Given that this material is not mathematical,
 the only other \LaTeX tag used in many contributions is `\dialog{}` which is
 user-defined and can be dropped into the document source code with a custom
 key-stroke in ***TexMaker*** (https://www.xm1math.net/texmaker/) 
-or ***TexStudio*** software used to facilitate
-the entry and processing of documents. This tag is intended to
+or ***TexStudio*** software that is used to facilitate
+the entry and processing of documents. The `\dialog{}` tag is intended to
 supply the appropriate opening and closing quotation marks, which may be 
 different for different targets for the resulting output document.
 
 <!-- Do we want a line of illustrative punctuation marks? -->
 
-All the tools we discuss support sub-documents (though with different
-syntax), and where the sub-documents more or less stand alone they are
-very helpful in keeping a clean working structure. However, we feel 
-that use of included files is most helpful for
-\LaTeX where the preamble is both detailed and generally demanding to 
-establish and verify.
+While we have described the use of sub-documents here for \LaTeX, all the 
+tools we discuss allow some form of inclusion of pieces of the content. 
+Where sub-documents more or less stand alone they are
+very helpful in keeping a clean working structure. For 
+\LaTeX, this is especially helpful where the preamble is both detailed 
+and demanding to establish and verify.
  
 All of the systems discussed except ***Typst*** use \LaTeX markup for entering 
 mathematical material, though ***AsciiDoc*** requires what we consider to be a
-rather messy invocation of the codes. That the approach is largely the same is
-helpful in reducing potential mistakes due to similarity in codes. There are 
+rather messy invocation of the \LaTeX code. Errors are avoided when using more
+than one system if the mathematical input is the same. There are 
 helpful compact references to the \LaTeX math markup codes such as
 https://tug.ctan.org/info/undergradmath/undergradmath.pdf. 
 
@@ -234,11 +236,13 @@ When users want their material in display or printed form, the markup must be
 rendered. Generally this is carried out by command line programs, and editing
 and processing tools that provide a graphical user interface (GUI) typically invoke
 those programs, following up by calling display programs. Moreover, the interfaces
-quite often are able to point to the location of bugs within their editing 
-component. For users, the quality of such interfaces can be measured in the
+quite often are able to handle errors by pointing to the (estimated) location of 
+bugs in source material by highlighting material within the GUI editing 
+module. For users, the quality of such interfaces can be measured in the
 convenience of the edit / render / debug cycle. 
 
-***Typst*** has a web-based GUI, though the command line "compiler" can be freely
+***Typst*** has a web-based GUI, of which a version is free to use, though the 
+command line "compiler" can be freely
 downloaded. The compiler is very fast to render documents, but the web-based
 interface may reduce the overall efficiency of use, especially if there are 
 network issues. Moreover, the no-charge account has some limitations, though we
@@ -246,10 +250,11 @@ have not made more than a cursory investigation.
 
 ## Translation of input source between systems
 
-We found that much of the material could be simply copied and edited between our
-trial example documents. Changes needed are largely cosmetic, though they are 
-tedious to carry out. It is likely some fairly simple programs or else AI tools
-could do this. 
+We found that much of the material in our example could be simply copied and 
+edited between our
+trial example documents. We judge the changes needed to be largely cosmetic, though 
+they are tedious to carry out. It is likely some fairly simple programs or else 
+AI tools could do this. 
 
 <!-- ?? Do we wish to try? -->
 
@@ -261,14 +266,27 @@ to incorporate special parts of documents.
 ***Typst*** offers input conversion of \LaTeX source via ***MiTeX***
 (https://typst.app/universe/package/mitex/). We have not tried this facility.
 
-## Examples of details
+
+## Dynamic documents
+
+Over the past decade and a half, it has become important to be able to update 
+documents as new data becomes available, or to be able to demonstrate the input
+and output of a computer program along with the code. Both  ***Rmarkdown*** and 
+***Quarto*** allow for the inclusion of code chunks with controls on whether the
+source and/or output is displayed. This is not unique to these systems, but
+***Typst*** uses a special scripting approach, and ***Asciidoc*** uses 'sys'
+macro calls. 
+
+
+## Examples of special details
 
 We consider two particular tweaks to documents as examples of capabilities.
 
 ### Non-standard equation labels
 
 Consider that we may want to identify a particular equation, e.g., the
-formula for the sum of an arithmetic progression in our Partridges example. 
+formula for the sum of an arithmetic progression in our Partridges example,
+by a special label. 
 Moreover, while the "numbering" is generally on the right hand side of a page,
 let us ask for it to be on the left. 
 
@@ -283,14 +301,15 @@ When one of us was teaching in the Telfer School of the University of Ottawa,
 it was useful to be able to produce examination papers customized by date and
 the name of each student. Students were informed that each examination was 
 unique, which reduced the value of trying to peek during the examination and
-saved the professor effort. (It also avoided the common anonymous paper, and
+saved the professor invigilation effort. (It also avoided the nuisance of an
+unidentified paper, and
 provided a default list of attendees through the verification of identity 
 as papers were given out at the start of the examination.) 
 
 A fairly simple program (in BASIC) allowed Postscript to be modified to do this
-customization in the footer of each page. In 2010, fairly simple modifications
+customization in the footer of each page. In 2010, modifications
 in a segment of the \LaTeX preamble of a biography allowed each recipient to 
-receive their own identified copy. In all likelihood this identification could
+receive their own identified PDF copy. In all likelihood this identification could
 be removed from the PDF file with relatively simple programming.
 
 We have not pursued how this might be carried out in other than \LaTeX.
@@ -301,10 +320,11 @@ We have not pursued how this might be carried out in other than \LaTeX.
 We note that \LaTeX has had a remarkably good run as a tool for mathematical and
 scientific documents, as well as serving very well for general documents where 
 the style and structure is relatively stable, as in the literary books one of us 
-has written. It is still effective and efficient for such tasks. 
+has written. It is still effective and efficient for such tasks. Moreover, it is
+used for the mathematical formatting within some of the newer typesetting systems.
 
 \LaTeX demands, however, a very heavy learning cost. Deviations from standard
-layout require in general a lot of investigation and experimentation to get a
+layout usually require a lot of investigation and experimentation to get a
 satisfactory solution to specialized needs. The system is such that one can always
 find a way to get to the desired result, but there is always a heavy time and
 effort cost to do so.
@@ -316,13 +336,13 @@ but our experience with mathematical material was less than comfortable.
 (@bookdown16) package it can be and has been used to prepare large 
 documents. 
 
-<!-- ???maybe move this up? --> 
 
 ***Quarto***
 
-
 Both ***Rmarkdown*** and ***Quarto*** offer active inline code chunks in a 
-variety of programming languages. 
+variety of programming languages. We feel this approach is more attractive
+than that of ***Typst*** or ***AsciiDoc***, but that could reflect our
+experience.
 
 
 ***Typst*** offers quite simple syntax and fast rendering. Its math syntax will
